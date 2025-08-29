@@ -321,7 +321,7 @@ class DinoVisionTransformer(nn.Module):
         ret = self.forward_features(*args, **kwargs)
         if True:
             register = ret["x_storage_tokens"] #4 
-            patch = ret["x_norm_patchtokens"] $196
+            patch = ret["x_norm_patchtokens"] #196
             cls = self.head(ret["x_norm_clstoken"]).unsqueeze(dim = 1)#1
             cat = torch.cat((register, patch, cls), dim = 1)
             return cat
